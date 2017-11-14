@@ -1,22 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class FruitList extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      eaten: 'false',
-      fruits: this.props.fruitList,
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <ul>
-          {this.state.fruits.map(fruit =>  <li>Name: {fruit.name} Eaten: {fruit.eaten}</li> )}
-        </ul>
-      </div>
-    )
-  }
-};
+export const FruitList = props =>
+<ul>
+  {props.fruitList.map((fruit) => {
+    return <li key={fruit}>{fruit}</li>;
+  })}
+</ul>;
